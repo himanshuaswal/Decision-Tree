@@ -29,3 +29,10 @@ new_model.fit(X_train,y_train)
 #Make predictions
 ytrainpred = new_model.predict(X_train)
 ytestpred = new_model.predict(X_test)
+
+#Calculate the accuracy
+from sklearn .metrics import accuracy_score
+trainaccuracy = accuracy_score(y_train, ytrainpred)
+testaccuracy = accuracy_score(y_test, ytestpred)
+print('training accuracy',trainaccuracy)
+print('testing accuracy', testaccuracy)
