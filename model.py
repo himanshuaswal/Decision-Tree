@@ -25,3 +25,7 @@ X_train, X_test, y_train, y_test = train_test_split(features, outcomes, test_siz
 #Train the model
 new_model= DecisionTreeClassifier(max_depth=,min_samples_leaf=5)
 new_model.fit(X_train,y_train)
+
+#Make predictions
+ytrainpred = new_model.predict(X_train)
+ytestpred = new_model.predict(X_test)
