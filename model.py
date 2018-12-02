@@ -9,8 +9,12 @@ random.seed(42)
 
 # Load the dataset
 in_file = 'titanic_data.csv'
-full_data = pd.read_csv(in_file)
 
 # Store the 'Survived' feature in a new variable and remove it from the dataset
 outcomes = full_data['Survived']
 features_raw = full_data.drop('Survived', axis = 1)
+
+#preprocess the data
+features = pd.get_dummies(features_raw)
+features = features.fillna(0.0)
+display(features.head())
